@@ -4,8 +4,10 @@ import {Link} from "react-router-dom";
 import img from "./StoneHEarthHeader.png";
 
 
-const Navbar = () => {
-    <Header style={{color: "red"}}>
+export default function Navbar(){
+    
+    return(
+        <Header style={{color: "red"}}>
         <Title primary>HearthSTORM</Title>
         <Link style={linkStyle} to="/">
             Info{" "}
@@ -21,6 +23,7 @@ const Navbar = () => {
         </Link>
       
     </Header>
+    )
 }
 
 const Header = styled.header`
