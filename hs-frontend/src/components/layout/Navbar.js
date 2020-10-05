@@ -1,0 +1,15 @@
+import React from "react";
+import styled from "styled-components"
+import {Link} from "react-router-dom"
+
+
+const Navbar = () => {
+    <Header>
+        <Header></Header>
+    </Header>
+}
+
+const Header = styled.header`
+    border: 1px solid #000;
+    background-image
+`;
