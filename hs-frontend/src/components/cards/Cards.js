@@ -30,7 +30,6 @@ const Cards = (props) =>{
                 <CardsContainer cards={getCards}>{props.children}</CardsContainer>
             </div>
         );
-    console.log(getCards);
     }
 
     return content;
