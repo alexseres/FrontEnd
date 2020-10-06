@@ -1,25 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import {Link} from "react-router-dom";
-import img from "./StoneHEarthHeader.png";
+import { Link } from "react-router-dom";
+import img from "../images/NavBarImg.png";
 
 
 export default function Navbar(){
     
     return(
-        <Header style={{color: "red"}}>
-        <Title primary>HearthSTORM</Title>
+        <Header>
         <Link style={linkStyle} to="/">
-            Info{" "}
+        <Button>Home</Button>
         </Link>
         <Link style={linkStyle} to={"/cards"}>
-            Cards
+        <Button>Cards Collection</Button>
         </Link>
         <Link style={linkStyle} to={"/cards-back"}>
-            Cards Back
+        <Button>Card Backs</Button>
         </Link>
         <Link style={linkStyle} to={"/favourite-cards"}>
-            Favourite Cards
+        <Button>Favourite Cards</Button>
         </Link>
       
     </Header>
@@ -28,9 +27,10 @@ export default function Navbar(){
 
 const Header = styled.header`
     border: 1px solid #000;
+    margin-top: -5px;
     background-image: url(${img});
     text-align: center;
-    padding: 15px;
+    padding: 60px;
     font-family: "Comic Sans MS";
     img{
         max-width: 100%;
@@ -38,14 +38,18 @@ const Header = styled.header`
     }
 `;
 
+const Button = styled.button`
+    background: palevioletred;
+    color: white;
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
+    border-radius: 3px;
+
+`
+
 const linkStyle = {
     color: "white",
     textDecoration: "none"
 };
-
-const Title = styled.h1`
-    font-family: "Comic Sans MS";
-    font-szie: 1em;
-    text-align: center;
-    color: blue;
-`
