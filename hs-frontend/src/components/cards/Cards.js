@@ -5,21 +5,36 @@ import axios from "axios"
 
 const Cards = (props) =>{
     const [getCards, setCards] = useState([]);
+    const [isLoading, setLoading] = useState(true);
+
     const cardsUrl = `http://localhost:5555/api/list`
     
     useEffect(() => {
         axios(cardsUrl)
             .then(response => setCards(response.data));
         console.log("ok");
+        setLoading(false);
     }, [cardsUrl])
 
-
-    console.log(getCards);
-    return (
-        <div className="cards-container">
-            <CardsContainer cards={getCards}>{props.children}</CardsContainer>
+    let content = (
+        <div>
+            <p>Loading</p>
         </div>
-    )
+    );
+
+    if (isLoading) {
+        content = <div>Loading...</div>;
+    } else if (!isLoading && getCards) {
+        content = (
+            <div className="cards-container">
+                <CardsContainer cards={getCards}>{props.children}</CardsContainer>
+            </div>
+        );
+    console.log(getCards);
+    }
+
+    return content;
+    
 }
 
 export default Cards;

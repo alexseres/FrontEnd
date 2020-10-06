@@ -26,13 +26,13 @@ const CardsContainer = (props) => {
 
     if (isLoading) {
         content = <div>Loading...</div>;
-    } else if (!isLoading) {
+    } else if (!isLoading && getClassic) {
         content = (
             <div>Not Loading</div>
         );
         var properties = { Classic: getClassic, Naxx: getNaxx }
 
-        console.log(props.cards);
+        console.log(props.cards.Classic[2]);
     }
 
     return content;
