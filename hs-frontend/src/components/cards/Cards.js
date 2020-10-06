@@ -7,7 +7,7 @@ const Cards = (props) =>{
     const [getCards, setCards] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
-    const cardsUrl = `http://localhost:5555/api/list`
+    const cardsUrl = `http://localhost:5000/api/list`
     
     useEffect(() => {
         axios(cardsUrl)
