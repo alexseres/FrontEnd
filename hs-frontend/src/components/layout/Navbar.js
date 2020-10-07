@@ -8,21 +8,22 @@ export default function Navbar(){
     
     return(
         <Header>
-        <div className="buttons">
+            <div className="buttonsLeftSide" style={buttonDivStyleLeft}>
             <Link style={linkStyle} to="/">
             <Button>Home</Button>
             </Link>
             <Link style={linkStyle} to={"/cards"}>
             <Button>Cards Collection</Button>
             </Link>
+            </div>
+            <div className="buttonsRightSide" style={buttonDivStlyeRight}>
             <Link style={linkStyle} to={"/cards-back"}>
             <Button>Card Backs</Button>
             </Link>
             <Link style={linkStyle} to={"/favourite-cards"}>
             <Button>Favourite Cards</Button>
             </Link>
-        </div>
-      
+            </div>                
     </Header>
     )
 }
@@ -44,12 +45,12 @@ const Header = styled.header`
 `;
 
 const Button = styled.button`
-    background: palevioletred;
-    color: white;
+    background: lavender;
+    color: black;
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
-    border: 2px solid palevioletred;
+    border: 2px solid black;
     border-radius: 3px;
 
 `
@@ -58,3 +59,19 @@ const linkStyle = {
     color: "white",
     textDecoration: "none"
 };
+
+const buttonDivStyleLeft = {
+    width: "330px",
+    height: "52px",
+    position: "absolute",
+    left: "0%",
+    top: "46%",
+}
+
+const buttonDivStlyeRight = {
+    width: "333px",
+    height: "52px",
+    position: "absolute",
+    right: "0%",
+    top: "46%",
+}

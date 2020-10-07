@@ -45,6 +45,7 @@ const containerStyle = {
     flexWrap: "wrap",
     justifyContent: "space-between",
     marginTop: "20px",
+    paddingTop: "20px",
 };
 
 export default CardsContainer;

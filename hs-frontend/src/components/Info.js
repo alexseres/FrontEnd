@@ -42,7 +42,7 @@ const SecondPicture = styled.img`
 `
 
 const WelcomingText = styled.h3`
-    font-family:luminari;
+    font-family: Luminari;
     font-size: 150%
 `
 

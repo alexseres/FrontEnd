@@ -26,7 +26,7 @@ const Cards = (props) =>{
         content = <div>Loading...</div>;
     } else if (!isLoading && getCards) {
         content = (
-            <div className="cards-container">
+            <div className="cards-container" style={contentStyle}>
                 <CardsContainer cards={getCards}>{props.children}</CardsContainer>
             </div>
         );
@@ -34,6 +34,10 @@ const Cards = (props) =>{
 
     return content;
     
+}
+
+const contentStyle = {
+    paddingTop: "1%",
 }
 
 export default Cards;
