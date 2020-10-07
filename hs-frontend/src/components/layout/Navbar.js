@@ -8,29 +8,34 @@ export default function Navbar(){
     
     return(
         <Header>
-        <Link style={linkStyle} to="/">
-        <Button>Home</Button>
-        </Link>
-        <Link style={linkStyle} to={"/cards"}>
-        <Button>Cards Collection</Button>
-        </Link>
-        <Link style={linkStyle} to={"/cards-back"}>
-        <Button>Card Backs</Button>
-        </Link>
-        <Link style={linkStyle} to={"/favourite-cards"}>
-        <Button>Favourite Cards</Button>
-        </Link>
+        <div className="buttons">
+            <Link style={linkStyle} to="/">
+            <Button>Home</Button>
+            </Link>
+            <Link style={linkStyle} to={"/cards"}>
+            <Button>Cards Collection</Button>
+            </Link>
+            <Link style={linkStyle} to={"/cards-back"}>
+            <Button>Card Backs</Button>
+            </Link>
+            <Link style={linkStyle} to={"/favourite-cards"}>
+            <Button>Favourite Cards</Button>
+            </Link>
+        </div>
       
     </Header>
     )
 }
 
 const Header = styled.header`
+    position: fixed;
+    width: 100%;
+    height: 12%;
     border: 1px solid #000;
-    margin-top: -5px;
+    margin-top: -23px;
     background-image: url(${img});
+    background-position-y: 10%;
     text-align: center;
-    padding: 60px;
     font-family: "Comic Sans MS";
     img{
         max-width: 100%;

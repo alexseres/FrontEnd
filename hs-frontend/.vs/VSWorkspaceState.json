@@ -3,10 +3,8 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\cards",
-    "\\src\\components\\images",
     "\\src\\components\\layout"
   ],
-  "SelectedNode": "\\src\\components\\cards\\CardsContainer.js",
+  "SelectedNode": "\\src\\components\\layout\\Navbar.js",
   "PreviewInSolutionExplorer": false
 }

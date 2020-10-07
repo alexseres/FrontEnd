@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"; 
-import axios from "axios";
+import defaultImg from "../images/defaultCardIMG.png";
 
 const OneCard = (props) => {
 
@@ -16,6 +16,12 @@ const OneCard = (props) => {
         </div>
     );
 
+
+    const handleDefaultIMG = event => {
+        event.target.src = defaultImg;
+        event.target.style = defCardIMGStyle;
+    }
+
     if (isLoading) {
         content = (
             <div className="card" style={cardStyle}>
@@ -25,7 +31,7 @@ const OneCard = (props) => {
     } else if (!isLoading) {
         content = (
             <div className="card" style={cardStyle}>
-                <img src={props.card.img} alt="cardImage"></img>
+                <img src={props.card.img} onError={handleDefaultIMG} alt="cardImage"></img>
             </div>
         );
     }
@@ -33,7 +39,7 @@ const OneCard = (props) => {
     return content;
 };
 
-export const cardStyle = {
+const cardStyle = {
     transition: "0.3s",
     width: "320px",
     textAlign: "center",
@@ -42,5 +48,11 @@ export const cardStyle = {
     marginRight: "10px",
     margin: "0 auto",
 };
+
+const defCardIMGStyle = `
+    width: 280px;
+    height: 392px;
+    padding-top: 50px;
+`
 
 export default OneCard;
