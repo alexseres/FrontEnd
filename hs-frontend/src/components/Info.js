@@ -23,7 +23,7 @@ const Info = () => {
             </div>
             <SecondPicture src={SecondImg}/>
             
-            
+            <br></br>
             <br></br>
             <br></br>
             <br></br>
