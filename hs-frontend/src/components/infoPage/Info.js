@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import img from "../images/infoPageMainPicture.png";
 import firstImg from "../images/Hearthstone-PNG-High-Quality-Image.png"
 import SecondImg from "../images/HeartStoneSecondpicture.png"
+import infoPageContext from "./InfoContext";
+import InfoFetcher from "./InfoFetcher";
+
 
 const Info = () => {
+    const [infos, setInfos] = useContext(infoPageContext);
+    
     return (
         <Container>
         <FirstImage src={firstImg}/>
@@ -21,7 +26,8 @@ const Info = () => {
                         <WelcomingText>Hearthstone builds upon the existing lore of the Warcraft series</WelcomingText>
                     </WelcomingTextDiv>
             </div>
-            <SecondPicture src={SecondImg}/>
+            <InfoFetcher/>
+            
             
             <br></br>
             <br></br>
@@ -30,6 +36,11 @@ const Info = () => {
         </Container>
     )
 }
+
+
+
+
+
 
 const SecondPicture = styled.img`
     width: 94%;

@@ -1,7 +1,5 @@
-import React,{useState, useEffect, useContext} from 'react';
-import styled from 'styled-components';
+import React,{createContext} from 'react';
 
-const InfoCotnext = () => {
-    const [results, setResults] = 
-    
-}
+const InfoPageContext = createContext([]);
+
+export default InfoPageContext;
