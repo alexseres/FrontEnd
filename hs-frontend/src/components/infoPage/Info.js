@@ -26,6 +26,7 @@ const Info = () => {
                         <WelcomingText>Hearthstone builds upon the existing lore of the Warcraft series</WelcomingText>
                     </WelcomingTextDiv>
             </div>
+            <SecondPicture src={SecondImg}/>
             <InfoFetcher/>
             
             
@@ -50,6 +51,7 @@ const SecondPicture = styled.img`
     border-radius: 4px;
     border: solid;
     margin: 2% 0% 0% 0%;
+    background:aqua;
 `
 
 const WelcomingText = styled.h3`
@@ -87,15 +89,20 @@ const Container = styled.div`
 const Iframe = styled.iframe`
     height: 550px;
     width: 95%;
-    padding: 10px;
-    margin 0% 2% 0% 2%
-    box-shadow: 5 5px 5px 5px rgba(5,5,5,5.2);
+    padding: 2px;
+    background:aqua;
+    border:solid;
+    margin 0% 2% 0% 2%;
+    box-shadow: 1px 1px 5px 5px rgba(0.3,0.3,0.3,0.2);
     frameborder="0"
     allow="accelerometer;
     autoplay;
     clipboard-write;
     encrypted-media;
     gyroscope; picture-in-picture" allowfullscreen
+    
+    
+
 `
 
 
