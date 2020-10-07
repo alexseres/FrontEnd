@@ -33,7 +33,7 @@ const Header = styled.header`
     width: 100%;
     height: 12%;
     border: 1px solid #000;
-    margin-top: -23px;
+    margin-top: -7px;
     background-image: url(${img});
     background-position-y: 10%;
     text-align: center;

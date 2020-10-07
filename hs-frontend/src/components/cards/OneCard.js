@@ -1,15 +1,29 @@
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState, useContext } from "react"; 
 import defaultImg from "../images/defaultCardIMG.png";
+import Modal from "./CardDetailsModal";
+import { DisplayContext } from "./DisplayContext";
 
 const OneCard = (props) => {
 
-    const [getIMG, setIMG] = useState("");
     const [isLoading, setLoading] = useState(true);
+
+    const [toggleTheme, getTheme] = useContext(DisplayContext);
 
     useEffect(() => {
         setLoading(false);
     }, [])
-    
+
+    const handleDefaultIMG = event => {
+        event.target.src = defaultImg;
+        event.target.style = defCardIMGStyle;
+    }
+
+
+    const handleCardClick = event => {
+        event.target.src = props.card.imgGold;
+        toggleTheme();
+    }
+
     let content = (
         <div>
             <p>Loading</p>
@@ -17,22 +31,18 @@ const OneCard = (props) => {
     );
 
 
-    const handleDefaultIMG = event => {
-        event.target.src = defaultImg;
-        event.target.style = defCardIMGStyle;
-    }
-
     if (isLoading) {
         content = (
             <div className="card" style={cardStyle}>
-                <p>Bad IMG URL</p>
+                <p>Loading...</p>
             </div>
         );
     } else if (!isLoading) {
         content = (
-            <div className="card" style={cardStyle}>
+                <div className="card" style={cardStyle} onClick={handleCardClick}>
                 <img src={props.card.img} onError={handleDefaultIMG} alt="cardImage"></img>
-            </div>
+                <Modal details={props.card} />
+                </div>
         );
     }
 
