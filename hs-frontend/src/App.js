@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
-import Info from "./components/Info";
+import Info from "./components/infoPage/Info";
 import Cards from "./components/cards/Cards";
 import BackCards from "./components/CardsBack";
 import Footer from "./components/layout/Footer"
