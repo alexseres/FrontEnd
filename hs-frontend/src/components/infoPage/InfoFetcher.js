@@ -17,14 +17,17 @@ const InfoFetcher = () => {
         axios(url)
             .then(res => setResults(res.data))
     })
+    
 
     const mappedList = Object.keys(results).map(function(key){
-        return(
-            <ModalContextProvider>
-                <InfoCard value={results[key]}/>
-            </ModalContextProvider>
-            
-        )
+        const name = key;
+        if(results[key] instanceof Array){
+            return(
+                <ModalContextProvider>
+                    <InfoCard value={results[key]} name={name}/>
+                </ModalContextProvider>
+            )
+        }
     });
     
     return mappedList;

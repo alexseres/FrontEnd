@@ -1,16 +1,26 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from "styled-components";
-import CardDetailsModal, {Modal} from "./Modal"
+import CardDetailsModal from "./Modal"
+import {ModalContext} from "./ModalContext";
 
+let a = 0;
 const InfoCard = (props) => {
+    const [toggleTheme,getTheme] = useContext(ModalContext)
+    
     return (
         <StyledCard>
-            <CardDetailsModal/>
-            <p>{props.data}</p>
+            <CardDetailsModal values={Object.values(props)[0]}/>
+            <p>{props.name}</p>
+            <button onClick={toggleTheme}>push</button>
         </StyledCard>
     )
 }
+
+
+
 export default  InfoCard;
+
+
 
 const StyledCard = styled.div`
     height:50px;
