@@ -3,8 +3,10 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\components\\layout"
+    "\\src\\components\\cardbacks",
+    "\\src\\components\\cards",
+    "\\src\\components\\images"
   ],
-  "SelectedNode": "\\src\\components\\layout\\Navbar.js",
+  "SelectedNode": "\\src\\components\\cards\\CardDetailsModal.js",
   "PreviewInSolutionExplorer": false
 }
