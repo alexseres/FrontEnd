@@ -19,15 +19,25 @@ const Info = () => {
             </Header>
             <div className="iframe-content" >
                 <Iframe src="https://www.youtube.com/embed/QdXl3QtutQI"/>
-                    <WelcomingTextDiv className="iframe-text">
+                    <StyledTextDiv className="iframe-text">
                         <WelcomingText>Hearthstone is a free-to-play online digital collectible card game</WelcomingText>
                         <WelcomingText>developed and published by Blizzard Entertainment.</WelcomingText>
                         <WelcomingText>Originally subtitled Heroes of Warcraft,</WelcomingText>
                         <WelcomingText>Hearthstone builds upon the existing lore of the Warcraft series</WelcomingText>
-                    </WelcomingTextDiv>
+                    </StyledTextDiv>
             </div>
             <SecondPicture src={SecondImg}/>
-            <InfoFetcher/>
+            <StyledTextDiv>
+                <StyledText>
+                    Whether you are a card game veteran or a brand new 
+                    player eager to learn, There is a place at the, there is a place at the Hearth for everyone.
+                    Look at many group we have divided our
+                    HearthStone cards:
+                </StyledText>
+            </StyledTextDiv>
+            <CardContainer>
+                <InfoFetcher/>
+            </CardContainer>
             
             
             <br></br>
@@ -40,7 +50,11 @@ const Info = () => {
 
 
 
-
+const CardContainer = styled.div`
+    display:grid;
+    grid-template-columns: auto auto auto;
+        
+`
 
 
 const SecondPicture = styled.img`
@@ -56,10 +70,17 @@ const SecondPicture = styled.img`
 
 const WelcomingText = styled.h3`
     font-family:luminari;
-    font-size: 150%
+    font-size: 150%;
+`
+const StyledText = styled.h4`
+    font-family:luminari;
+    font-size: 170%;
+    margin:5%;
+
 `
 
-const WelcomingTextDiv = styled.div`
+
+const StyledTextDiv = styled.div`
     text-align:left;
     margin: 0% 0% 0% 2%
 `

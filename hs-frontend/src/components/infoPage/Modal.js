@@ -2,66 +2,61 @@ import {ModalContext} from "./ModalContext";
 import React,{useContext} from "react";
 import styled from 'styled-components';
 import img from "../images/Hearthstone-PNG-High-Quality-Image.png"
-import Modal from "styled-react-modal"
-
-
-        
-// let getTheme;
-// let toggleTheme;
-
-//display: ${props => props.status ? "inherit" : "none"};
-//display: ${props => props.status ? "initial" : "none"};
-
-//  display: ${props => props.status} ? "initial" : "none"};
-const aaa = () => {
-    alert("aaaa")
-}
-
+import 'react-morphing-modal/dist/ReactMorphingModal.css';
+import {useModal} from "react-morphing-modal";
 
 
 let HiddenModal = styled.div`
     display: ${props => props.status ? "inherit" : "none"};
     position: inherit;
     z-index: 1;
-    width: 100%;
-    height: 21%;
+    height: 250px;
+    width: 150%;
     overflow: auto;
-    width: 100%;
-    height:100%;
-    background-image: ${img};
-    background-size: 320px 270px;
-    background: green;
+    margin auto;
     color: grey;
-    font-weight:700;
+    padding-top:100px;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 `
 
 
-const CardDetailsModal = props => {
 
+const CardDetailsModal = props => {
+    const {modalProps, getTriggerProps} = useModal();
     const [toggleTheme, getTheme] = useContext(ModalContext);
     const a = () => {
         console.log(HiddenModal.componentStyle.rules[1])
     }
    
     const handleChange = () => {
-        a();
         toggleTheme();
     }
     
     return (
-        <HiddenModal className="modal-content" status={getTheme} onClick={handleChange}>
-           
-            <div className="details">
+        <HiddenModal className="my-modal" status={getTheme} onClick={handleChange}>
+            <div className="modal-content">
+                <Close className="close">&times;</Close>
                 {props["values"].map(value => (<p>{value}</p>))}
-            </div>    
-            <div>
-                
             </div>
         </HiddenModal>
     );
     
     
 }
+
+const Close = styled.span`
+    color: #aaaaaa;
+    float: left;
+    font-size: 28px;
+    font-weight:bold;
+    &click{
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+    }
+`
 
 
 export default CardDetailsModal;
