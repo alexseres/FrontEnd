@@ -37,7 +37,7 @@ const OneBack = (props) => {
       <div className="card" style={cardStyle} onClick={handleCardClick}>
         <img
           src={props.card.imgAnimated}
-          onError={defaultImg}
+          onError={handleError}
           alt="Card Back"
         ></img>
         <Modal details={props.card} />
