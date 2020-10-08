@@ -31,12 +31,13 @@ const StyledFooter = styled.footer`
   text-align: right;
 
   .fa {
-    padding: 20px;
+    padding: 12px;
     font-size: 30px;
-    width: 30px;
+    width: 27px;
+    height: 27px;
     text-align: center;
     border-radius: 50%;
-    margin: 10px;
+    margin: 4px;
   }
 
   .fa:hover {
