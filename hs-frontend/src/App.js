@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Info from "./components/infoPage/Info";
 import Cards from "./components/cards/Cards";
-import BackCards from "./components/CardsBack";
+import BackCards from "./components/cardbacks/CardsBack";
 import Footer from "./components/layout/Footer"
 
 
