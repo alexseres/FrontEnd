@@ -6,13 +6,13 @@ export default function Footer() {
     <StyledFooter>
       <a
         href="https://www.facebook.com/Hearthstone.en/?brand_redir=498467596862680"
-        class="fa fa-facebook"
+        className="fa fa-facebook"
       >
         {" "}
       </a>
       <a
         href="https://www.instagram.com/playhearthstone/"
-        class="fa fa-instagram"
+        className="fa fa-instagram"
       >
         {" "}
       </a>
