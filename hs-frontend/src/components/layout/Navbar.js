@@ -8,40 +8,39 @@ export default function Navbar(){
     
     return(
         <Header>
-            <div className="buttonsLeftSide" style={buttonDivStyleLeft}>
-            <Link style={linkStyle} to="/">
-            <Button>Home</Button>
-            </Link>
-            <Link style={linkStyle} to={"/cards"}>
-            <Button>Cards Collection</Button>
-            </Link>
-            </div>
-            <div className="buttonsRightSide" style={buttonDivStlyeRight}>
-            <Link style={linkStyle} to={"/cards-back"}>
-            <Button>Card Backs</Button>
-            </Link>
-            <Link style={linkStyle} to={"/favourite-cards"}>
-            <Button>Favourite Cards</Button>
-            </Link>
-            </div>                
-    </Header>
+            <li><a href="/">Home</a></li>
+            <li><a href="/cards">Cards</a></li>
+            <li><a href="/cards-back">Cards Back</a></li>
+        </Header>
     )
 }
 
-const Header = styled.header`
+const Header = styled.ul`
+    
     position: fixed;
+    height: 5%;
     width: 100%;
-    height: 12%;
-    border: 1px solid #000;
-    margin-top: -7px;
-    background-image: url(${img});
-    background-position-y: 10%;
-    text-align: center;
-    font-family: "Comic Sans MS";
-    img{
-        max-width: 100%;
-        height: auto;
-    }
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+    li {
+        float: left;
+      }
+
+      li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: red;
+      }
 `;
 
 const Button = styled.button`
