@@ -1,4 +1,3 @@
-
 import React, {useContext} from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
@@ -69,10 +68,6 @@ const SecondPicture = styled.img`
 `
 
 const WelcomingText = styled.h3`
-<<<<<<< HEAD:hs-frontend/src/components/Info.js
-    font-family: Luminari;
-    font-size: 150%
-=======
     font-family:luminari;
     font-size: 150%;
 `
@@ -81,7 +76,6 @@ const StyledText = styled.h4`
     font-size: 170%;
     margin:5%;
 
->>>>>>> main_page_feature:hs-frontend/src/components/infoPage/Info.js
 `
 
 
@@ -117,9 +111,9 @@ const Iframe = styled.iframe`
     width: 95%;
     padding: 2px;
     background:aqua;
-    border:solid;
     margin 0% 2% 0% 2%;
     box-shadow: 1px 1px 5px 5px rgba(0.3,0.3,0.3,0.2);
+    border:solid;
     frameborder="0"
     allow="accelerometer;
     autoplay;

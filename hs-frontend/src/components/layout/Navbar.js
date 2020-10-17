@@ -42,35 +42,3 @@ const Header = styled.ul`
         background-color: red;
       }
 `;
-
-const Button = styled.button`
-    background: lavender;
-    color: black;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid black;
-    border-radius: 3px;
-
-`
-
-const linkStyle = {
-    color: "white",
-    textDecoration: "none"
-};
-
-const buttonDivStyleLeft = {
-    width: "330px",
-    height: "52px",
-    position: "absolute",
-    left: "0%",
-    top: "46%",
-}
-
-const buttonDivStlyeRight = {
-    width: "333px",
-    height: "52px",
-    position: "absolute",
-    right: "0%",
-    top: "46%",
-}
