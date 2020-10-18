@@ -36,14 +36,14 @@ const Modal = (props) => {
     }
     `
 
-    const tableRows = props.info.map((oneRow) => (
+    const rows = props.info.map((oneRow) => (
         <p>{oneRow}</p>
     ));
   
     return (
       <ModalDiv onClick={toggleTheme}>
           <TextDiv>
-            {tableRows}
+            {rows}
           </TextDiv>
       </ModalDiv>
     );

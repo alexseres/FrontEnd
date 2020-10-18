@@ -64,8 +64,9 @@ const HomeBottomHalf = (props) => {
 
 
 const ContainerDiv = styled.div`
-    
-
+    width: 78%;
+    margin-left: 215px;
+    margin-bottom: 100px;
 `
 
 export default HomeBottomHalf;

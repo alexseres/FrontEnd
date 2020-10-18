@@ -18,16 +18,19 @@ export default function Navbar(){
 const Header = styled.ul`
     
     position: fixed;
-    height: 5%;
+    height: 6%;
     width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    height: 56px;
+    z-index: 99;
 
     li {
         float: left;
+        height: 56px;
       }
 
       li a {
@@ -36,9 +39,10 @@ const Header = styled.ul`
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        height: 56px;
       }
       
       li a:hover {
-        background-color: red;
+        background-color: #949494;
       }
 `;

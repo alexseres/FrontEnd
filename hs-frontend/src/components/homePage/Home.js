@@ -12,8 +12,8 @@ const Home = (props) => {
             <IFrame src="https://www.youtube.com/embed/QdXl3QtutQI?autoplay=1&mute=1&loop=1&controls=0&playlist=QdXl3QtutQI"/>
         </VideoBackgroundDiv>
         <VideoContentDiv className="Video Content">
-        <p>Hearthstone is a free-to-play online digital collectible card game</p>
-        <p>Hearthstone builds upon the existing lore of the Warcraft series</p>
+        <p>Hearthstone is a free-to-play online digital collectible card game.</p>
+        <p>Hearthstone builds upon the existing lore of the Warcraft series.</p>
         <p>Developed and published by Blizzard Entertainment.</p>
         </VideoContentDiv>
         <BottomHalf>
@@ -26,15 +26,17 @@ const Home = (props) => {
 const VideoContentDiv = styled.div`
     position: relative;
     text-align: left;
-    bottom: 140px;
+    bottom: 134px;
     background: rgba(0,0,0,0.5);
     color: #f1f1f1;
     font-weight: bold;
-    width: 100%;
-    padding-top: 2px;
-    padding-bottom: 9px;
-    padding-left: 0px;
-
+    width: 78%;
+    padding-top: 1px;
+    margin-left: 210px;
+    p {
+        padding-left: 5px;
+        font-size: 18px;
+    }
 `
 
 const VideoBackgroundDiv = styled.div`
@@ -44,7 +46,7 @@ const VideoBackgroundDiv = styled.div`
 
 const IFrame = styled.iframe`
     position: relative;
-    opacity: 65%;
+    opacity: 70%;
     z-index: -99;
     width: 100%;
     height: 835px;
