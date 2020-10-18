@@ -8,70 +8,41 @@ export default function Navbar(){
     
     return(
         <Header>
-            <div className="buttonsLeftSide" style={buttonDivStyleLeft}>
-            <Link style={linkStyle} to="/">
-            <Button>Home</Button>
-            </Link>
-            <Link style={linkStyle} to={"/cards"}>
-            <Button>Cards Collection</Button>
-            </Link>
-            </div>
-            <div className="buttonsRightSide" style={buttonDivStlyeRight}>
-            <Link style={linkStyle} to={"/cards-back"}>
-            <Button>Card Backs</Button>
-            </Link>
-            <Link style={linkStyle} to={"/favourite-cards"}>
-            <Button>Favourite Cards</Button>
-            </Link>
-            </div>                
-    </Header>
+            <li><a href="/">Home</a></li>
+            <li><a href="/cards">Cards</a></li>
+            <li><a href="/cards-back">Cards Back</a></li>
+        </Header>
     )
 }
 
-const Header = styled.header`
+const Header = styled.ul`
+    
     position: fixed;
+    height: 6%;
     width: 100%;
-    height: 12%;
-    border: 1px solid #000;
-    margin-top: -7px;
-    background-image: url(${img});
-    background-position-y: 10%;
-    text-align: center;
-    font-family: "Comic Sans MS";
-    img{
-        max-width: 100%;
-        height: auto;
-    }
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height: 56px;
+    z-index: 99;
+
+    li {
+        float: left;
+        height: 56px;
+      }
+
+      li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        height: 56px;
+      }
+      
+      li a:hover {
+        background-color: #949494;
+      }
 `;
-
-const Button = styled.button`
-    background: lavender;
-    color: black;
-    font-size: 1em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid black;
-    border-radius: 3px;
-
-`
-
-const linkStyle = {
-    color: "white",
-    textDecoration: "none"
-};
-
-const buttonDivStyleLeft = {
-    width: "330px",
-    height: "52px",
-    position: "absolute",
-    left: "0%",
-    top: "46%",
-}
-
-const buttonDivStlyeRight = {
-    width: "333px",
-    height: "52px",
-    position: "absolute",
-    right: "0%",
-    top: "46%",
-}

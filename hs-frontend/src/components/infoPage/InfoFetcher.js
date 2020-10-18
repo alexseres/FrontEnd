@@ -8,10 +8,9 @@ import InfoCard from "./InfoCard"
 
 
 const InfoFetcher = () => {
-    // const [show, setShow] = useState(false);
+    
     const url = "http://localhost:5000/api/info"
     const [results, setResults] = useState([]);
-    //const [toggleTheme, getTheme] = useContext(ModalContext);
     
     useEffect(() => {
         axios(url)
