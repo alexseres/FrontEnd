@@ -41,7 +41,7 @@ const OneCard = (props) => {
           src={props.card.img}
           onError={handleDefaultIMG}
           alt="cardImage"
-        ></img>
+        />
         <Modal details={props.card} />
       </div>
     );

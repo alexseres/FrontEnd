@@ -13,7 +13,6 @@ const StyledImageDiv = styled.div`
     height:100vh;
     margin:0px;
     content: url(${img});
-    
     top:0px;
     right:0px;
     bottom:0px;

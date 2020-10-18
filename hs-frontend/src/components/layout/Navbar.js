@@ -23,6 +23,9 @@ export default function Navbar(){
             <Link style={linkStyle} to={"/favourite-cards"}>
             <Button>Favourite Cards</Button>
             </Link>
+            <Link style={linkStyle} to={"/search"}>
+            <Button>Search</Button>
+            </Link>    
             </div>                
     </Header>
     )
