@@ -23,7 +23,7 @@ const OneInfo = (props) => {
         height: 30px;
         width: 40px;
 
-        animation: ${getTheme ? "rotate-keyframes 0.5s linear 0s 1 forwards" : "rotate-back 0.5s linear 0s 1 forwards"};
+        animation: ${getTheme ? "rotate-keyframes 0.3s linear 0s 1 forwards" : "rotate-back 0.3s linear 0s 1 forwards"};
 
         @keyframes rotate-keyframes {
             from {
@@ -49,7 +49,7 @@ const OneInfo = (props) => {
 
     const OuterDiv = styled.div`
         background: black;
-        opacity: ${getTheme ? "85%" : "75%"};
+        opacity: ${getTheme ? "95%" : "75%"};
         `
 
     const StyledH2 = styled.h2`
@@ -57,12 +57,12 @@ const OneInfo = (props) => {
         width: 111px;
         margin: 20px;
         margin-top: 35px;
-        border-bottom: ${getTheme ? "2px solid wheat" : "none"};
+        border-bottom: ${getTheme ? "3px solid wheat" : "none"};
         `
     const ContainerDiv = styled.div`
         display: flex;
         background-color: black;
-        opacity: ${getTheme ? "85%" : "75%"};
+        opacity: ${getTheme ? "100%" : "75%"};
         color: white;
         margin-bottom: 20px;
         margin-top: 20px;
@@ -88,7 +88,7 @@ const ToggleArrowDiv = styled.div`
     position: relative;
     display: inline-block;
     margin: 25px;
-    margin-left: 1200px;
+    left: 69%;
     margin-top: 30px;
     padding-top: 6px;
 `
