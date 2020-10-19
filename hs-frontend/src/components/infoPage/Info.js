@@ -1,8 +1,7 @@
 import React, {useContext} from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
-import img from "../images/infoPageMainPicture.png";
-import firstImg from "../images/Hearthstone-PNG-High-Quality-Image.png"
+import firstImg from "../images/HSLogo.png"
 import SecondImg from "../images/HeartStoneSecondpicture.png"
 import infoPageContext from "./InfoContext";
 import InfoFetcher from "./InfoFetcher";
