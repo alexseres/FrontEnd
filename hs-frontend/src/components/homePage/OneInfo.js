@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import Modal from "./Modal";
 import {HomeContext} from "./HomeContext";
 import styled from 'styled-components';
@@ -8,23 +8,51 @@ const OneInfo = (props) => {
 
     const [toggleTheme, getTheme] = useContext(HomeContext);
 
+    const [getAnimationEnd, setAnimationEnd] = useState(false);
+
     const handleClick = (event) => {
         toggleTheme();
     }
 
+    const handleAnimationEnd = (event) => {
+        console.log(event.target.style);
+    }
+
+
     const StyledIMG = styled.img`
         height: 30px;
         width: 40px;
-        transform: ${getTheme ? "rotateX(180deg)" : "none"}
+
+        animation: ${getTheme ? "rotate-keyframes 0.5s linear 0s 1 forwards" : "rotate-back 0.5s linear 0s 1 forwards"};
+
+        @keyframes rotate-keyframes {
+            from {
+             transform: rotate(0deg);
+            }
+           
+            to {
+             transform: rotate(180deg);
+            }
+        }
+
+        @keyframes rotate-back {
+            from {
+                transform: rotate(180deg);
+               }
+              
+               to {
+                transform: rotate(0deg);
+               }
+        }
+
         `
 
     const OuterDiv = styled.div`
         background: black;
         opacity: ${getTheme ? "85%" : "75%"};
-    
         `
 
-    const StyledP = styled.h2`
+    const StyledH2 = styled.h2`
         font-weight: bold;
         width: 111px;
         margin: 20px;
@@ -43,9 +71,9 @@ const OneInfo = (props) => {
 
     return (
         <OuterDiv className="InfoWithModal-Div">
-            <ContainerDiv className="InfoHeader-H2 and Span" onClick={handleClick}>
-            <StyledP>{props.info.name}</StyledP>
-            <ToggleArrowDiv><StyledIMG src={ToggleArrowPng} alt="toggleArrow"></StyledIMG></ToggleArrowDiv>
+            <ContainerDiv className="headerWithArrow" onClick={handleClick}>
+            <StyledH2>{props.info.name}</StyledH2>
+            <ToggleArrowDiv><StyledIMG src={ToggleArrowPng} alt="toggleArrow" onAnimationEnd={handleAnimationEnd}></StyledIMG></ToggleArrowDiv>
             </ContainerDiv>
             <Modal info={props.info.data}></Modal>
         </OuterDiv>

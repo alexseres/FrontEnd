@@ -1,7 +1,6 @@
 import {ModalContext} from "./ModalContext";
 import React,{useContext} from "react";
 import styled from 'styled-components';
-import img from "../images/Hearthstone-PNG-High-Quality-Image.png"
 import 'react-morphing-modal/dist/ReactMorphingModal.css';
 import {useModal} from "react-morphing-modal";
 
