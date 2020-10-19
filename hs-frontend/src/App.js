@@ -6,6 +6,7 @@ import Info from "./components/infoPage/Info";
 import Cards from "./components/cards/Cards";
 import BackCards from "./components/cardbacks/CardsBack";
 import Footer from "./components/layout/Footer";
+import Home from "./components/homePage/Home";
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/" component={Info} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/cards" component={Cards} />
           <Route exact path="/cards-back" component={BackCards} />
         </Switch>
