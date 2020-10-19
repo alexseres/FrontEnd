@@ -6,7 +6,7 @@ import Info from "./components/infoPage/Info";
 import Cards from "./components/cards/Cards";
 import BackCards from "./components/cardbacks/CardsBack";
 import Footer from "./components/layout/Footer";
-import Search from "./components/search/search";
+
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
           <Route exact path="/" component={Info} />
           <Route exact path="/cards" component={Cards} />
           <Route exact path="/cards-back" component={BackCards} />
-          <Route exact path="/search" component={Search}/>
         </Switch>
       </Router>
       <Footer />
