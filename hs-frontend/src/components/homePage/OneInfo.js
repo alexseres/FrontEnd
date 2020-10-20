@@ -88,7 +88,7 @@ const ToggleArrowDiv = styled.div`
     position: relative;
     display: inline-block;
     margin: 25px;
-    left: 69%;
+    left: 75%;
     margin-top: 30px;
     padding-top: 6px;
 `
