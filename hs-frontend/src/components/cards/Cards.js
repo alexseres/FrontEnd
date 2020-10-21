@@ -7,7 +7,7 @@ import OneCard from "../cards/OneCard";
 const Cards = (props) => {
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(true);
-    const cardsUrl = `http://localhost:5000/api/list`
+    const cardsUrl = `http://localhost:5000/cardsAPI/cards`
 
     useEffect(() => {
         axios(cardsUrl)
@@ -28,7 +28,7 @@ const Cards = (props) => {
         }
 
         let data = JSON.stringify(getInputFieldValue);
-        let response = await axios.post("http://localhost:5000/api/search",data , requestOptions);
+        let response = await axios.post("http://localhost:5000/cardsAPI/search",data , requestOptions);
 
         setCards(response.data);
     }
@@ -60,8 +60,8 @@ const SearchFieldandButtonDiv = styled.div`
     padding-top: 70px;
     position: relative;
     min-width: 100px;
-    max-width: 160px;
-    left: 45%;
+    max-width: 200px;
+    left: 42%;
 
     .search-icon {
         position: absolute;

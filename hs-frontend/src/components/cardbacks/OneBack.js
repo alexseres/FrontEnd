@@ -51,8 +51,8 @@ const OneBack = (props) => {
 
 
 const StyledIMG = styled.img`
-  width: 300px;
-  height: 350px;
+  width: 310px;
+  height: 425px;
 `
 
 const CardDivStyle = styled.div`
