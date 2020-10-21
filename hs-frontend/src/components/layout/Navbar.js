@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import Logo from "../images/HSLogo.png";
 
 
@@ -51,14 +50,14 @@ const Header = styled.div`
       float: right;
       list-style-type: none;
       margin-right: 190px;
-      font-size: 17px;
+      font-size: 20px;
       font-weight: bold;
     }
 
     li {
         height: 56px;
         float: left;
-        margin-top: -16px;
+        margin-top: -22px;
       }
     
     

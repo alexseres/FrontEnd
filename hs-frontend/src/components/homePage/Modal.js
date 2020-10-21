@@ -25,10 +25,11 @@ const Modal = (props) => {
     `;
 
     const TextDiv = styled.div`
-        height: 355px;
+        height: 345px;
         padding-top: 13px;
         margin-top: 50px;
         padding-left: 8px;
+        font-size: 23px;
         overflow: scroll;
         overflow-x: hidden;
         ::-webkit-scrollbar {

@@ -12,6 +12,7 @@ const Cards = (props) => {
     const[items, setItems] = useState(15);
     let count= 0;
     
+    
     const{
         cards,
         hasMore,
@@ -19,21 +20,21 @@ const Cards = (props) => {
         error
     } = UseItemSearch(query, items)
     
-    
+
     function handleScroll(e){
-        
+
         let bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
         if(bottom){
             setItems(prevItems => prevItems + 25)
         }
         console.log("hm")
     }
-    
+
     function handleSearch(e){
         setQuery(e.target.value);
         setItems(15);
     }
-    
+
 
     return  (
         <div className="search" >
@@ -48,8 +49,8 @@ const Cards = (props) => {
                         </DisplayContextProvider>)
                     }else{
                         return (<DisplayContextProvider>
-                                    <OneCard card={card}/>
-                                </DisplayContextProvider>)
+                            <OneCard card={card}/>
+                        </DisplayContextProvider>)
                     }
                 })}
             </div>
@@ -57,7 +58,7 @@ const Cards = (props) => {
             <div>{error && 'Error'}</div>
         </div>
     )
-    
+
 }
 export default Cards;
 
@@ -65,24 +66,28 @@ const SearchFieldandButtonDiv = styled.div`
     padding-top: 70px;
     position: relative;
     min-width: 100px;
-    max-width: 160px;
-    left: 45%;
+    max-width: 200px;
+    left: 42%;
 
     .search-icon {
         position: absolute;
-        top: 76px;
+        top: 78px;
         left: 6px;
-        width: 14px;
+        width: 19px;
       }
 
       .searchItem {
-        border: 1px solid grey;
+        border: 2px solid grey;
         border-radius: 5px;
-        height: 20px;
+        height: 30px;
         width: 100%;
         padding: 2px 23px 2px 30px;
         outline: 0;
         background-color: #f5f5f5;
+      }
+
+      .searchItem:hover {
+          border: 2px solid black;
       }
 
 `

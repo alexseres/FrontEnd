@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import OneInfo from "./OneInfo";
 import {HomeContextProvider} from "./HomeContext";
 

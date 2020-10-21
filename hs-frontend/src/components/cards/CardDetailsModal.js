@@ -10,7 +10,7 @@ const CardDetailsModal = (props) => {
   const handleChange = () => {
     toggleTheme();
   }
-
+  
 
   return (
     <HiddenModal className="modal-content" status={getTheme} onClick={handleChange}>
@@ -20,7 +20,6 @@ const CardDetailsModal = (props) => {
         <StyledP>
           Rarity: {props.details.rarity ? props.details.rarity : "Free"}
         </StyledP>
-        <StyledP>Class: {props.details.playerClass}</StyledP>
         <StyledP>Cost: {props.details.cost}</StyledP>
         <StyledP>Text: {props.details.text}</StyledP>
         <StyledP>Extra: {props.details.flavor}</StyledP>
