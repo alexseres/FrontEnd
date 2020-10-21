@@ -1,4 +1,5 @@
 body {
+    overflow-y: hidden;
     margin: 0;
     background-image: url("./components/images/HSBackground.jpg");
     background-repeat: no-repeat;
