@@ -21,7 +21,6 @@ const Cards = (props) => {
     
 
     function handleScroll(e){
-        console.log(e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight);
         let bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
         if(bottom){
             setItems(prevItems => prevItems + 25)
