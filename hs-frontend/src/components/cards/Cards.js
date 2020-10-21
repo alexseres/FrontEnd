@@ -6,14 +6,18 @@ import OneCard from "../cards/OneCard";
 
 const Cards = (props) => {
     const [cards, setCards] = useState([]);
-    const cardsUrl = `http://localhost:5000/cardsAPI/cards`
+    const [getInputFieldValue, setInputFieldValue] = useState("");
+
 
     useEffect(() => {
-        axios(cardsUrl)
-            .then(response => setCards(response.data));
-    }, [])
 
-    const [getInputFieldValue, setInputFieldValue] = useState("");
+        const cardsUrl = `http://localhost:5000/cardsAPI/cards`;
+
+        axios(cardsUrl)
+            .then(response => {
+                setCards(response.data)
+           });
+    }, [])
 
     const inputFieldChange = (event) => {
         setInputFieldValue(event.target.value);
@@ -31,11 +35,13 @@ const Cards = (props) => {
         setCards(response.data);
     }
 
-    const mappedList = cards.map((card) => (
-         (<DisplayContextProvider>
-            <OneCard card={card}/>
-        </DisplayContextProvider>)
-    ))
+        let mappedList = (<div>Loading...</div>)
+
+        mappedList = cards.map((card) => (
+             (<DisplayContextProvider>
+                <OneCard card={card}/>
+            </DisplayContextProvider>)
+        ))
 
     return  (
         <div className="search">

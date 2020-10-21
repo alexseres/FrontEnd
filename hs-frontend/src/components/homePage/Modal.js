@@ -29,7 +29,7 @@ const Modal = (props) => {
         padding-top: 13px;
         margin-top: 50px;
         padding-left: 8px;
-        font-size: 18px;
+        font-size: 23px;
         overflow: scroll;
         overflow-x: hidden;
         ::-webkit-scrollbar {
