@@ -6,14 +6,12 @@ import OneCard from "../cards/OneCard";
 
 const Cards = (props) => {
     const [cards, setCards] = useState([]);
-    const [loading, setLoading] = useState(true);
     const cardsUrl = `http://localhost:5000/cardsAPI/cards`
 
     useEffect(() => {
         axios(cardsUrl)
             .then(response => setCards(response.data));
-        setLoading(false);
-    },[])
+    }, [])
 
     const [getInputFieldValue, setInputFieldValue] = useState("");
 

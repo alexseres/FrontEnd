@@ -30,9 +30,8 @@ const VideoContentDiv = styled.div`
     background: rgba(0,0,0,0.5);
     color: #f1f1f1;
     font-weight: bold;
-    width: 78%;
+    width: 100%;
     padding-top: 1px;
-    margin-left: 210px;
     p {
         padding-left: 5px;
         font-size: 18px;
