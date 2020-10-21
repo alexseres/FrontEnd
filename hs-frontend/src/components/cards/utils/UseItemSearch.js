@@ -15,9 +15,10 @@ export default function UseItemSearch(query, itemNumbers) {
         setLoading(true);
         setError(false);
         let cancel;
+        
         axios({
             method: 'GET',
-            url: 'http://localhost:5000/api/search',
+            url: 'http://localhost:5000/cardsAPI/search',
             params: {query: query, itemNumber: itemNumbers},
             cancelToken: new axios.CancelToken(c => cancel = c)
         }).then(response => {

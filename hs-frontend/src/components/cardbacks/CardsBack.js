@@ -8,7 +8,7 @@ const BackCards = (props) => {
     const [getBacks, setBacks] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
-    const cardsUrl = `http://localhost:5000/api/cards-back`
+    const cardsUrl = `http://localhost:5000/cardbackAPI/backs`
 
     useEffect(() => {
         axios(cardsUrl)
