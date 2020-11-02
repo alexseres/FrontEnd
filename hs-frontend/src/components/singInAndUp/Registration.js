@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from "axios";
 import styled from "styled-components";
 
  const Registration = (props) => {
@@ -6,8 +8,20 @@ import styled from "styled-components";
     const[longPW, setLongPW] = useState(false);
     const[equalPWs, setEqualPWs] = useState(false);
 
+    const[userEmail, setUserEmail] = useState("");
+    const[userName, setUserName] = useState("");
+
     const[firstPWField, setFirstPWField] = useState("");
     const[confirmPWField, setConfirmPWField] = useState("");
+
+
+    const handleUserNameChange = (event) => {
+        setUserName(event.target.value);
+    }
+
+    const handleEmailChange = (event) => {
+        setUserEmail(event.target.value);
+    }
 
 
     const saveFirstPWFieldValueOnChange = (event) => {
@@ -37,6 +51,23 @@ import styled from "styled-components";
             setEqualPWs(false);
         }
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        console.log("Email gec: " + userEmail);
+
+        const requestOptions = {
+            headers:{'Content-Type': 'application/json'},
+        }
+
+        var postBody = JSON.stringify({email: userEmail, username: userName, password: firstPWField});
+
+        axios.post("http://localhost:5000/userAPI/registration", postBody, requestOptions)
+            .then(resp => console.log(resp.data));
+    }
+
+    
 
 
     let longEnoughSpan = (<div></div>);
@@ -90,11 +121,15 @@ import styled from "styled-components";
 
     let content = (
         <WholePage className="DivOfTheForm">
-             <StyledForm action="#" method="post">
+             <StyledForm action="#" method="post" onSubmit={handleSubmit}>
                 <h2>Sign Up</h2>
                 <p>
+                    <label htmlFor="Username" className="floatLabel">Username</label>
+                    <input id="Username" onChange={handleUserNameChange} name="Username" type="text" />
+                </p>
+                <p>
                     <label htmlFor="Email" className="floatLabel">Email</label>
-                    <input id="Email" name="Email" type="text" />
+                    <input id="Email" onChange={handleEmailChange} name="Email" type="text" />
                 </p>
                 <p>
                     <label htmlFor="password" className="floatLabel">Password</label>
