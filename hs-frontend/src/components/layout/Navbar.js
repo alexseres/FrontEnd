@@ -15,6 +15,8 @@ export default function Navbar(){
             <li><a href="/">Home</a></li>
             <li><a href="/cards">Cards</a></li>
             <li><a href="/cards-back">Cards Back</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/sign-up">Sign Up</a></li>
             </ul>
           </div>
         </Header>
