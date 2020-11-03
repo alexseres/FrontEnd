@@ -8,6 +8,9 @@ import styled from "styled-components";
     const[longPW, setLongPW] = useState(false);
     const[equalPWs, setEqualPWs] = useState(false);
 
+    const[IsAccountCreated, setIsAccountCreated] = useState(false);
+
+
     const[userEmail, setUserEmail] = useState("");
     const[userName, setUserName] = useState("");
 
@@ -61,9 +64,13 @@ import styled from "styled-components";
 
         axios.post("http://localhost:5000/userAPI/registration", postBody, requestOptions)
             .then(resp => console.log(resp.data));
+
+        setIsAccountCreated(true);
     }
 
-    
+    if (IsAccountCreated) {
+        return <Redirect to="/" />
+    }
 
 
     let longEnoughSpan = (<div></div>);
