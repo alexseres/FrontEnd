@@ -42,20 +42,16 @@ import styled from "styled-components";
         setConfirmPWField(event.target.value);
 
         if (firstPWField === event.target.value) {
-            console.log("egyezik");
             setEqualPWs(true);
         }
         else
         {
-            console.log("nem egyezik");
             setEqualPWs(false);
         }
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        console.log("Email gec: " + userEmail);
 
         const requestOptions = {
             headers:{'Content-Type': 'application/json'},
