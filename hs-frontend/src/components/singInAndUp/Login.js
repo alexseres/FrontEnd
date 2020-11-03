@@ -1,26 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
+import { Redirect } from 'react-router-dom';
+import axios from "axios";
 
 const Login = (porps) => {
 
-    return (
-        <WholePage className="DivOfTheForm">
-             <StyledForm action="#" method="post">
-                <h2>Log In</h2>
-                <p>
-                    <label htmlFor="Email" className="floatLabel">Email</label>
-                    <input id="Email" name="Email" type="text" />
-                </p>
-                <p>
-                    <label htmlFor="password" className="floatLabel">Password</label>
-                    <input id="password" name="password" type="password" />
-                </p>
-                <p>
-                    <input type="submit" value="Login" id="submit" />
-                </p>
-            </StyledForm>
-            </WholePage>
-    )
+  const[userEmail, setUserEmail] = useState("");
+  const[firstPWField, setFirstPWField] = useState("");
+
+
+  const handleEmailChange = (event) => {
+    setUserEmail(event.target.value);
+  }
+
+
+  const handlePasswordChange = (event) => {
+      console.log(event.target.value);
+      setFirstPWField(event.target.value);
+  }
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const requestOptions = {
+        headers:{'Content-Type': 'application/json'},
+    }
+
+    var postBody = JSON.stringify({email: userEmail,username: "Unknow-Logger", password: firstPWField});
+
+    axios.post("http://localhost:5000/userAPI/login", postBody, requestOptions)
+        .then(resp => console.log(resp.data));
+  }
+
+  let content = (
+      <WholePage className="DivOfTheForm">
+            <StyledForm action="#" method="post" onSubmit={handleSubmit}>
+              <h2>Log In</h2>
+              <p>
+                  <label htmlFor="Email" className="floatLabel">Email</label>
+                  <input id="Email" name="Email" type="text" onChange={handleEmailChange}/>
+              </p>
+              <p>
+                  <label htmlFor="password" className="floatLabel">Password</label>
+                  <input id="password" name="password" type="password" onChange={handlePasswordChange}/>
+              </p>
+              <p>
+                  <input type="submit" value="Login" id="submit" />
+              </p>
+          </StyledForm>
+        </WholePage>
+  )
+
+  return content;
 }
 
 
