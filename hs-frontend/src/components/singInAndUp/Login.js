@@ -8,6 +8,7 @@ const Login = (porps) => {
   const[userEmail, setUserEmail] = useState("");
   const[firstPWField, setFirstPWField] = useState("");
 
+  const[IsAccountCreated, setIsAccountCreated] = useState(false);
 
   const handleEmailChange = (event) => {
     setUserEmail(event.target.value);
@@ -24,14 +25,24 @@ const Login = (porps) => {
     event.preventDefault();
 
     const requestOptions = {
-        headers:{'Content-Type': 'application/json'},
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        crossorigin: true,
+        withCredentials: true
     }
 
-    var postBody = JSON.stringify({email: userEmail,username: "Unknow-Logger", password: firstPWField});
+    var postBody = JSON.stringify({email: userEmail,username: userEmail, password: firstPWField});
 
-    axios.post("http://localhost:5000/userAPI/login", postBody, requestOptions)
+    axios.post("https://localhost:44363/userAPI/login", postBody, requestOptions)
         .then(resp => console.log(resp.data));
+    setIsAccountCreated(true)
   }
+
+
+  //if (IsAccountCreated) {
+    //return <Redirect to="/" />
+  //}
 
   let content = (
       <WholePage className="DivOfTheForm">
