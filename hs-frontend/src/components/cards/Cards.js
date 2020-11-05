@@ -25,7 +25,6 @@ const Cards = (props) => {
         if(bottom){
             setItems(prevItems => prevItems + 25)
         }
-        console.log("hm")
     }
 
     function handleSearch(e){

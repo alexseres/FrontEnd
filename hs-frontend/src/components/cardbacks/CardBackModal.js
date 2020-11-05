@@ -44,7 +44,6 @@ const HiddenModal = styled.div`
 
 `
 
-
 const StyledP = styled.p`
   width: 280px;
   margin-left: 15px;

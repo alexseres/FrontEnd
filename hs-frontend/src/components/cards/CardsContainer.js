@@ -37,8 +37,6 @@ const CardsContainer = (props) => {
       ],
     };
 
-    console.log(cardSets.datas[2][8]);
-
     content = cardSets.datas.map((oneDLC) => (
       <div key={oneDLC.name} className="oneSetOfCards" style={containerStyle}>
         <OneSet cardsOfTheDLC={oneDLC.data}></OneSet>

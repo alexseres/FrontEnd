@@ -63,6 +63,5 @@ const CardDivStyle = styled.div`
   margin-Bottom: 10px;
   margin-Left: 10px;
   margin-Right: 10px;
-
 `
 export default OneBack;

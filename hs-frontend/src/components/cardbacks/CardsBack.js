@@ -7,29 +7,25 @@ const BackCards = (props) => {
 
     const [getBacks, setBacks] = useState([]);
     const [isLoading, setLoading] = useState(true);
-    const [getInputFieldValue, setInputFieldValue] = useState("");
 
-    const cardsUrl = `http://localhost:5000/cardbackAPI/backs`
+    const cardsUrl = `https://localhost:44363/cardbackAPI/backs`
 
     useEffect(() => {
         axios(cardsUrl)
             .then(response => setBacks(response.data));
         setLoading(false);
     }, [])
-    
-
-    /*const inputFieldChange = (event) => {
-        setInputFieldValue(event.target.value);
-    }*/
 
     const submitFormHandler = async (ev) => {
         ev.preventDefault();
         const requestOptions = {
             headers:{'Content-Type': 'application/json'},
+            crossorigin: true,
+            withCredentials: true
         }
 
         let data = JSON.stringify(ev.target.value);
-        let response = await axios.post("http://localhost:5000/cardbackAPI/search",data , requestOptions);
+        let response = await axios.post("https://localhost:44363/cardbackAPI/search",data , requestOptions);
 
         setBacks(response.data);
     }

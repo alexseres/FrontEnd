@@ -10,7 +10,6 @@ import styled from "styled-components";
 
     const[IsAccountCreated, setIsAccountCreated] = useState(false);
 
-
     const[userEmail, setUserEmail] = useState("");
     const[userName, setUserName] = useState("");
 
@@ -60,9 +59,9 @@ import styled from "styled-components";
             headers:{'Content-Type': 'application/json'},
         }
 
-        var postBody = JSON.stringify({email: userEmail, username: userName, password: firstPWField});
+        var postBody = JSON.stringify({email: userEmail, username: userName, password: firstPWField, redirectURL: "/"});
 
-        axios.post("http://localhost:5000/userAPI/registration", postBody, requestOptions)
+        axios.post("https://localhost:44363/userAPI/registration", postBody, requestOptions)
             .then(resp => console.log(resp.data));
 
         setIsAccountCreated(true);
@@ -152,7 +151,6 @@ import styled from "styled-components";
     );
     
     return content
-
 }
 
 const StyledForm = styled.form`
@@ -232,8 +230,8 @@ const StyledForm = styled.form`
           font-size: 14px;
         }
         }
-
 `
+
 const VisibleSpan = styled.span`
     display:block;
     background: #22222240;
@@ -245,7 +243,6 @@ const VisibleSpan = styled.span`
 const InvisibleSpan = styled.span`
     display: none;
 `
-
 
 const WholePage = styled.div`
     padding-top: 25px;

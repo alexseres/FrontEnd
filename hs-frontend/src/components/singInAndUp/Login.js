@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import { Redirect } from 'react-router-dom';
 import axios from "axios";
 
 const Login = (porps) => {
@@ -39,10 +38,6 @@ const Login = (porps) => {
     setIsAccountCreated(true)
   }
 
-
-  //if (IsAccountCreated) {
-    //return <Redirect to="/" />
-  //}
 
   let content = (
       <WholePage className="DivOfTheForm">

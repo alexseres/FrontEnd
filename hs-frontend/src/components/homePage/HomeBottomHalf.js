@@ -5,7 +5,7 @@ import Container from "./BottomContainer";
 
 const HomeBottomHalf = (props) => {
 
-    const url = "http://localhost:5000/api/info"
+    const url = "https://localhost:44363/api/info"
     const [getResult, setResult] = useState([]);
     
     useEffect(() => {
@@ -21,8 +21,6 @@ const HomeBottomHalf = (props) => {
 
 
     if (getResult["classes"]) {
-
-        console.log(getResult["classes"]);
 
         var apiContent = {datas: [
             {
