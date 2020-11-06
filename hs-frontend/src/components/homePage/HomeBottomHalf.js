@@ -5,7 +5,7 @@ import Container from "./BottomContainer";
 
 const HomeBottomHalf = (props) => {
 
-    const url = "https://localhost:44363/api/info"
+    const url = process.env.REACT_APP_API_HOME_URL;
     const [getResult, setResult] = useState([]);
     
     useEffect(() => {

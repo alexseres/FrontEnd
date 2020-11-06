@@ -33,7 +33,7 @@ const Login = (porps) => {
 
     var postBody = JSON.stringify({email: userEmail,username: userEmail, password: firstPWField});
 
-    axios.post("https://localhost:44363/userAPI/login", postBody, requestOptions)
+    axios.post(process.env.REACT_APP_API_LOGIN_URL, postBody, requestOptions)
         .then(resp => console.log(resp.data));
     setIsAccountCreated(true)
   }
