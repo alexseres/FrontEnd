@@ -16,7 +16,7 @@ export default function Footer() {
       >
         {" "}
       </a>
-      © Designed by Alex and Ádám
+      © Designed by Ádám and Alex
     </StyledFooter>
   );
 }
