@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\src"
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\cardbacks",
+    "\\src\\components\\cards",
+    "\\src\\components\\images"
   ],
-  "SelectedNode": "\\src\\index.css",
+  "SelectedNode": "\\src\\components\\cards\\CardDetailsModal.js",
   "PreviewInSolutionExplorer": false
 }
