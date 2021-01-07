@@ -61,7 +61,7 @@ import styled from "styled-components";
 
         var postBody = JSON.stringify({email: userEmail, username: userName, password: firstPWField, redirectURL: "/"});
 
-        axios.post("https://localhost:44363/userAPI/registration", postBody, requestOptions)
+        axios.post("https://localhost:5001/userAPI/registration", postBody, requestOptions)
             .then(resp => console.log(resp.data));
 
         setIsAccountCreated(true);
