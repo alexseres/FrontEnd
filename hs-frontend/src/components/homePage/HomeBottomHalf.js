@@ -5,7 +5,11 @@ import Container from "./BottomContainer";
 
 const HomeBottomHalf = (props) => {
 
-    const url = "https://localhost:5001/api/info"
+// <<<<<<< HEAD
+//     const url = "https://localhost:5001/api/info"
+// =======
+    const url = process.env.REACT_APP_API_HOME_URL;
+//>>>>>>> cd98f36d81980b27bdd8137dcecef648de7c97bb
     const [getResult, setResult] = useState([]);
     
     useEffect(() => {

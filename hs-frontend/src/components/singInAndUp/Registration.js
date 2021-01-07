@@ -61,7 +61,11 @@ import styled from "styled-components";
 
         var postBody = JSON.stringify({email: userEmail, username: userName, password: firstPWField, redirectURL: "/"});
 
-        axios.post("https://localhost:5001/userAPI/registration", postBody, requestOptions)
+// <<<<<<< HEAD
+//         axios.post("https://localhost:5001/userAPI/registration", postBody, requestOptions)
+// =======
+        axios.post(process.env.REACT_APP_API_REGISTER_URL, postBody, requestOptions)
+//>>>>>>> cd98f36d81980b27bdd8137dcecef648de7c97bb
             .then(resp => console.log(resp.data));
 
         setIsAccountCreated(true);

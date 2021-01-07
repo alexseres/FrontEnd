@@ -8,7 +8,12 @@ const BackCards = (props) => {
     const [getBacks, setBacks] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
-    const cardsUrl = `https://localhost:5001/cardbackAPI/backs`
+// <<<<<<< HEAD
+//     const cardsUrl = `https://localhost:5001/cardbackAPI/backs`
+// =======
+    const cardsUrl = process.env.REACT_APP_API_CARDBACKS_URL;
+    const cardsSearchURL = process.env.REACT_APP_API_CARDBACKS_SEARCH_URL;
+//>>>>>>> cd98f36d81980b27bdd8137dcecef648de7c97bb
 
     useEffect(() => {
         axios(cardsUrl)
@@ -25,7 +30,11 @@ const BackCards = (props) => {
         }
 
         let data = JSON.stringify(ev.target.value);
-        let response = await axios.post("https://localhost:5001/cardbackAPI/search",data , requestOptions);
+// <<<<<<< HEAD
+//         let response = await axios.post("https://localhost:5001/cardbackAPI/search",data , requestOptions);
+// =======
+        let response = await axios.post(cardsSearchURL, data, requestOptions);
+//>>>>>>> cd98f36d81980b27bdd8137dcecef648de7c97bb
 
         setBacks(response.data);
     }
